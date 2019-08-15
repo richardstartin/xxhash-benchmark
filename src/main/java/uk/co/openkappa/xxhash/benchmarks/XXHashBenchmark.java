@@ -7,7 +7,7 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import java.util.concurrent.TimeUnit;
 
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-@Fork(value = 1, jvmArgsPrepend = {"--add-modules=jdk.incubator.vector", "-XX:TypeProfileLevel=111"})
+@Fork(value = 1, jvmArgsPrepend = {"--add-modules=jdk.incubator.vector", "-Djdk.incubator.vector.VECTOR_ACCESS_OOB_CHECK=0"})
 public class XXHashBenchmark {
 
   @Benchmark
